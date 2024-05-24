@@ -14,10 +14,10 @@
         <div id="liste-oeuvres">
             <?php
                 include_once('oeuvres.php');
-                for ($i = 1; $i < count($oeuvres); $i++) {
+                for ($i = 1; $i <= count($oeuvres); $i++) {
             ?>
             <article class="oeuvre">
-                <a href="oeuvre-<?php echo $i; ?>.html">
+                <a href="oeuvre.php?id=<?php echo $i; ?>">
                     <img src="img/<?php echo $oeuvres[$i]['image']; ?>" alt="<?php echo $oeuvres[$i]['titre']; ?>">
                     <h2><?php echo $oeuvres[$i]['titre']; ?></h2>
                     <p class="description"><?php echo $oeuvres[$i]['auteur']; ?></p>
