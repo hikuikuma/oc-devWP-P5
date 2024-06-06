@@ -1,3 +1,12 @@
+<?php
+    include_once('oeuvres.php');
+    if( isset($_GET['id']) && array_key_exists($_GET['id'], $oeuvres) ) {
+        $id = $_GET['id'];
+    } else {
+        header('Location: index.php');
+    }
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -11,14 +20,7 @@
 <body>
 <?php include_once('header.php'); ?>
 <main>
-    <?php
-        include_once('oeuvres.php');
-        if( isset($_GET['id']) && array_key_exists($_GET['id'], $oeuvres) ) {
-            $id = $_GET['id'];
-        } else {
-            $id = 1;
-        }
-    ?>
+
     <article id="detail-oeuvre">
         <div id="img-oeuvre">
             <img src="img/<?php echo $oeuvres[$id]['image']; ?>" alt="<?php echo $oeuvres[$id]['titre']; ?>">
